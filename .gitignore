@@ -1,0 +1,23 @@
+--- Large Data & Model Files ---
+As requested, ignore these common large file types.
+They are hosted externally and linked in the README.
+*.csv
+*.txt
+*.safetensors
+*.pt
+
+--- Common Python Ignores ---
+Virtual environment folder
+venv/
+pycache/
+*.pyc
+
+--- Secrets & Credentials ---
+Never commit sensitive information
+.env
+
+--- OS & Editor Specific Files ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
