@@ -1,120 +1,122 @@
-🧠 Glassdoor Sentiment Analysis
+# 🧠 Glassdoor Sentiment Analysis  
 
-This project analyzes employee reviews from Glassdoor to classify overall sentiment (Positive / Neutral / Negative) and uncover insights about workplace culture, management, and job satisfaction. It demonstrates an end-to-end Natural Language Processing (NLP) workflow — from raw text preprocessing to model deployment — using modern deep learning architectures.
+This project analyzes **employee reviews from Glassdoor** to classify sentiment (Positive / Neutral / Negative) and extract insights about workplace culture, management, and job satisfaction.  
+It demonstrates a **complete NLP workflow** — from raw text preprocessing to model training and Streamlit deployment — using both **classical and transformer-based deep learning architectures**.  
 
-🚀 Project Overview
+---
 
-The goal is to build an intelligent system that can automatically determine employee sentiment based on textual reviews.
-The project was implemented in two phases to showcase the evolution from traditional NLP methods to advanced transformer-based models.
+## 🚀 Project Overview  
 
-🔹 Phase 1 — LSTM + GloVe
+The goal is to build an **intelligent system** that can automatically determine employee sentiment from textual reviews.  
+The project is developed in **two phases** to showcase the transition from traditional NLP to **modern transformer models**.  
 
-Built an LSTM model using pre-trained GloVe embeddings.
+### 🔹 Phase 1 — LSTM + GloVe  
+- Built an **LSTM model** using pre-trained **GloVe embeddings**.  
+- Achieved **87% validation accuracy** on cleaned review data.  
+- Implemented tokenization, padding, and dropout to stabilize training.  
 
-Achieved 87% validation accuracy on cleaned review text.
+### 🔹 Phase 2 — Fine-Tuned BERT  
+- Leveraged **Hugging Face Transformers** with **PyTorch** for fine-tuning BERT.  
+- Achieved **90% validation accuracy**, improving performance by **7%**.  
+- Added **Dropout layers** and applied **hyperparameter tuning** to mitigate overfitting.  
+- Deployed the model with **Streamlit** for real-time sentiment prediction.  
 
-🔹 Phase 2 — Fine-Tuned BERT
+---
 
-Leveraged Hugging Face Transformers and PyTorch to fine-tune a BERT model.
+## ⚙️ Key Features  
 
-Achieved 90% validation accuracy, improving performance by 7%.
+✅ End-to-end NLP pipeline: Cleaning, preprocessing, embedding, model training & deployment.  
+✅ Feature engineering: Compared **TF-IDF**, **Word2Vec (GloVe)**, and **BERT embeddings**.  
+✅ Interactive web app: Streamlit-based real-time sentiment prediction.  
+✅ Power BI dashboard: 3 dashboards (General, Jobs, Firms) for data-driven insights.  
+✅ Modular architecture: Reusable scripts for preprocessing, feature engineering, and modeling.  
 
-Added Dropout layers and applied hyperparameter tuning to reduce overfitting.
+---
 
-⚙️ Key Features
+## 🧩 Tech Stack  
 
-End-to-end NLP pipeline: Data cleaning, preprocessing, embedding, model training, and deployment.
+**Languages & Frameworks:**  
+Python, PyTorch, TensorFlow, Hugging Face Transformers  
 
-Feature engineering: Compared TF-IDF, Word2Vec (GloVe), and BERT embeddings.
+**Libraries:**  
+Scikit-learn, Pandas, NumPy, NLTK, Gensim, Matplotlib, Seaborn  
 
-Interactive deployment: Real-time prediction web app built with Streamlit.
+**Visualization & Deployment:**  
+Power BI, Streamlit  
 
-Dashboard insights: Sentiment trends by company, job title, and location.
+---
 
-Scalable architecture: Modular file structure with reusable scripts for preprocessing, modeling, and visualization.
+## 📊 Model Performance  
 
-🧩 Tech Stack
+| Model | Embedding | Accuracy | Framework |
+|:------|:-----------|:----------|:------------|
+| LSTM | GloVe | 87% | TensorFlow |
+| BERT | Transformer (Fine-tuned) | 90% | PyTorch |
 
-Languages & Libraries:
+---
 
-Python, PyTorch, TensorFlow, Scikit-learn, Hugging Face Transformers
+## 📈 Dashboards  
 
-Pandas, NumPy, Matplotlib, Seaborn, NLTK, Gensim
+Developed **interactive Power BI dashboards** to visualize:  
+- Sentiment distribution across companies and job titles.  
+- Trends in management, culture, and compensation sentiment.  
+- Comparison between firms and job roles.  
 
-Streamlit for deployment
+📊 File: `Dashboards/Glassdoor Dashboard.pbix`
 
-📊 Results
-Model	Embedding	Accuracy	Framework
-LSTM	GloVe	87%	TensorFlow
-BERT	Transformer (Fine-tuned)	90%	PyTorch
-📁 Project Structure
+---
+
+## 📁 Project Structure  
+```bash
 Glassdoor-Sentiment-Analysis/
-│
 ├── 📄 README.md
-│
 ├── 📊 Dashboards/
 │   └── Glassdoor Dashboard.pbix
-│
 ├── 📁 Data/
 │   ├── Analysis_data_.csv
 │   ├── glassdoor_reviews.csv
 │   └── Sentiment_data_2.csv
-│
 ├── 🖼️ Images/
-│   └── (dashboard template, icons, images)
-│
+│   └── (Dashboard visuals, architecture diagrams, etc.)
 ├── 🧩 Phase 1/                # LSTM + GloVe (TensorFlow)
 │   ├── 📂 Glove/
-│   │   └── wiki_giga_2024_100_MFT20_vectors_seed_2024_alpha_0.75_eta_0.05.050_combined.txt
-│   │
 │   ├── 📂 Models/
-│   │   ├── sentiment_model_0.87.keras
-│   │   └── tokenizer.pkl
-│   │
 │   ├── 📓 Notebooks/
-│   │   ├── Base_line_models.ipynb
-│   │   └── Data_Preparation.ipynb
-│   │
 │   └── ⚙️ Src/
-│       ├── data_preprocessing.py
-│       ├── evaluate.py
-│       ├── feature_engineering.py
-│       ├── model.py
-│       ├── sentiment_utils.py
-│       └── train.py
-│
 ├── 🤖 Phase 2/                # Fine-tuned BERT (PyTorch + Hugging Face)
 │   ├── 📂 Models/
-│   │   ├── BERT model/
-│   │   └── distilbert BERT model/
-│   │
 │   ├── 📓 Notebooks/
-│   │   └── model_preparation.ipynb
-│   │
 │   └── ⚙️ Src/
-│       ├── data_preprocessing.py
-│       ├── glassdoor_dataset_class.py
-│       ├── model.py
-│       ├── Streamlit web app.py
-│       ├── test.py
-│       └── train.py
+└── ⚠️ Note: Large files (datasets, models) are hosted externally.
+```
+## Download Pre-trained GloVe Embeddings
 
-💡 Insights & Learnings
+Download glove.6B.zip from the official GloVe website
 
-Learned to combine NLP preprocessing with deep learning architectures.
+Create a folder named Glove/.
 
-Observed how transfer learning (BERT) significantly improves generalization.
+Unzip the file and place glove.6B.100d.txt inside
 
-Enhanced model interpretability through sentiment visualization.
+## Download the Dataset
 
-Built modular, production-ready ML pipelines.
+Download glassdoor job reviews.csv from Kaggle
 
-🌐 Deployment
+## 💡 Insights & Learnings
 
-The project is deployed using Streamlit, providing:
+- Combined NLP preprocessing with deep learning architectures.
 
-Real-time text sentiment classification.
+- Observed the strong generalization power of BERT over LSTM.
 
-Visual analytics for review trends.
+- Enhanced model interpretability through sentiment visualization dashboards.
 
-Interactive UI for exploring model predictions.
+- Built a modular, production-ready pipeline for scalable NLP tasks.
+
+## 🌐 Deployment
+
+- Deployed via Streamlit, providing:
+
+- Real-time sentiment classification.
+
+- Visual analytics for review insights.
+
+- Interactive interface for stakeholder demonstration.
